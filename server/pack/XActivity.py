@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.exceptions import RequestValidationError, HTTPException
+
+from server.base.config.ServerConfig import servcf
 from server.base.exception.HttpAllExction import HttpAllExction
 from server.base.exception.Validation import Validation
 from server.base.middleware.ErrorMiddleware import ErrorMiddleware
@@ -13,7 +15,10 @@ class XActivity:
         self.base()
         self._utils()
         self.utils()
-        uvicorn.run(app, host='192.168.31.123', port=8083)
+        if servcf.http:
+            pass
+        else:
+            uvicorn.run(app, host=servcf.host, port=servcf.port)
 
     def _base(self):
         self.__middleware()

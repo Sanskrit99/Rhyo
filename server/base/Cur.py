@@ -1,7 +1,18 @@
 from peewee import *
 
+from server.base.config.PsqlConfig import psqlcf
 
-class LoginModel(Model):
+class BaseModel(Model):
+    class Meta:
+        database = PostgresqlDatabase(
+            'fap',
+            host=psqlcf.host,
+            port=psqlcf.port,
+            user=psqlcf.user,
+            password=psqlcf.password
+        )
+
+class LoginModel(BaseModel):
     us = TextField(unique=True)
     pw = TextField()
     aka = TextField()
@@ -10,3 +21,4 @@ class LoginModel(Model):
 
     class Meta:
         table_name = "login"
+
