@@ -1,0 +1,14 @@
+version: '3'
+services:
+  fawff:
+    build:
+      dockerfile: DockerFile
+      context: .
+    image: fawff
+    ports:
+      - 8885:8080
+    volumes:
+      - D:\Aoc\Java:/data1
+    command: bash DockerFile
+    network_mode: bridge
+    restart: unless-stopped

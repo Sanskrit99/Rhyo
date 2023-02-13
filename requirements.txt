@@ -1,0 +1,5 @@
+fastapi==0.91.0
+peewee==3.15.4
+pydantic==1.10.2
+starlette==0.20.4
+uvicorn==0.20.0
