@@ -4,7 +4,6 @@ from server.pack.XFragment import XFragment, PrefixInjection, SimpInjection
 from fastapi import APIRouter
 from fastapi import Depends
 
-
 @PrefixInjection(prefix='/test')
 @SimpInjection(dependencies=[Depends(SimpDepends())])
 class TestFragment(XFragment):
@@ -16,3 +15,5 @@ class TestFragment(XFragment):
         @router.post('/login')
         async def login(request: SimpRequest = Depends(LoginDepends(LoginModel))):
             return request.phuy.show()
+
+

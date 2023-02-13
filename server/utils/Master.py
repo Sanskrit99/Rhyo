@@ -17,7 +17,9 @@ class Master(XMaster):
     def fragment(self):
         from server.fragment.CandFragment import CandFragment
         from server.fragment.TestFragment import TestFragment
+        from server.fragment.VideoFragment import VideoFragment
         return [
             TestFragment.instance(),
-            CandFragment.instance()
+            CandFragment.instance(),
+            VideoFragment.instance()
         ]
