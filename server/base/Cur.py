@@ -1,6 +1,7 @@
 from peewee import *
 
-from server.base.config.PsqlConfig import psqlcf
+from root.config.PsqlConfig import psqlcf
+
 
 class BaseModel(Model):
     class Meta:

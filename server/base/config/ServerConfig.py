@@ -1,7 +1,9 @@
 from pydantic import BaseSettings
 
-from server.base.config.SysConfig import env
 from functools import lru_cache
+
+from root.config.SysConfig import env
+
 
 class ServerConfig(BaseSettings):
     host: str
